@@ -41,9 +41,14 @@
 .item {
   display: none;
   height: 100%;
+  transition:filter 2s ;
+  
 }
 .item.active {
   display: block;
+  
+  filter: grayscale(0.5) blur(2px);
+  border-radius: 20px;
 }
 .thumb {
   height: 20%;
@@ -56,6 +61,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  
 }
 .prev,
 .next {
@@ -66,12 +72,22 @@
   color: white;
 }
 #slider .fa-circle-chevron-down,
-#slider .fa-circle-chevron-up {
+#slider .fa-circle-chevron-up,
+#slider .fa-circle-stop {
   cursor: pointer;
 }
 .next {
-  top: -20px;
+  bottom: -20px;
 }
 .prev {
-  bottom: -20px;
+  
+  top: -20px;
+}
+.stop {
+  position: absolute;
+  z-index: 3;
+  text-align: end;
+  top: -20px;
+  right: 0;
+  color: white;
 }
